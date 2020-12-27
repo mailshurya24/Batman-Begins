@@ -1,5 +1,5 @@
 class Drop
-{
+{ 
     constructor(x,y,radius)
     {
         var options = 

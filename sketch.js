@@ -9,7 +9,7 @@ var drops = [];
 
 function preload()
 {
-
+    var thunderImg = loadImage("Thunder1.png");
 }
 
 function setup()
@@ -26,7 +26,13 @@ function setup()
 
     for(var i = 0; i<maxDrops; i++)
     {
-        drops.push(new Drop(random(0,400), random(0,400)));
+        drops.push(new Drop(random(0,400), random(0,400), 70));
+    }
+
+    if(frameCount%100 === 0)
+    {
+        var thunder = createSprite(0,random(20,1180));
+        thunder.lifetime = 30;
     }
 
 }
@@ -38,4 +44,5 @@ function draw()
     Bruce.display();
     drops.display();
     drops.updatePosition();
+    drawSprites();
 }   
